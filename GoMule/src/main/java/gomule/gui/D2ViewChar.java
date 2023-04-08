@@ -957,11 +957,13 @@ public class D2ViewChar extends JInternalFrame implements D2ItemContainer, D2Ite
                      */) {
                         int lX = pEvent.getX();
                         int lY = pEvent.getY();
+                        /*   ClassicD2R (no weapon switch)
                         if (((lX >= 16 && lX <= 45) || (lX >= 247 && lX <= 276)) && (lY >= 24 && lY <= 44)) {
                             setWeaponSlot(1);
                         } else if (((lX >= 51 && lX <= 80) || (lX >= 282 && lX <= 311)) && (lY >= 24 && lY <= 44)) {
                             setWeaponSlot(2);
                         }
+                        */
                         // determine where the mouse click is
                         D2ItemPanel lItemPanel = new D2ItemPanel(pEvent, true, false, false);
                         if (lItemPanel.getPanel() != -1) {
@@ -1618,11 +1620,13 @@ public class D2ViewChar extends JInternalFrame implements D2ItemContainer, D2Ite
                      */) {
                         int lX = pEvent.getX();
                         int lY = pEvent.getY();
+                        /*  ClassicD2R (No weapon switch)
                         if (((lX >= 16 && lX <= 45) || (lX >= 247 && lX <= 276)) && (lY >= 24 && lY <= 44)) {
                             setWeaponSlot(1);
                         } else if (((lX >= 51 && lX <= 80) || (lX >= 282 && lX <= 311)) && (lY >= 24 && lY <= 44)) {
                             setWeaponSlot(2);
                         }
+                        */
 
 
                     }

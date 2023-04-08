@@ -1370,6 +1370,7 @@ public class D2ViewChar extends JInternalFrame implements D2ItemContainer, D2Ite
                         if (lItemPanel.getPanel() == 1337) {
                             return;
                         }
+                        /*      // ClassicD2R     Do not allow equiping Merc
                         if (lItemPanel.getPanel() != -1) {
                             // if there is an item to grab, grab it
                             if (lItemPanel.isItem()) {
@@ -1435,6 +1436,7 @@ public class D2ViewChar extends JInternalFrame implements D2ItemContainer, D2Ite
                                 }
                             }
                         }
+                        */
                     }
                 }
 
@@ -1464,6 +1466,7 @@ public class D2ViewChar extends JInternalFrame implements D2ItemContainer, D2Ite
                         return;
                     }
 
+                    /*    // ClassicD2R     Do not change mouse cursor on Merc. No Merc items
                     if (lItemPanel.getPanel() != -1) {
                         if (lItemPanel.isItem()) {
                             lCurrentMouse = lItemPanel.getItem();
@@ -1494,6 +1497,7 @@ public class D2ViewChar extends JInternalFrame implements D2ItemContainer, D2Ite
                     } else {
                         setCursorNormal();
                     }
+                    */
                     if (lCurrentMouse == null) {
                         D2MercPainterPanel.this.setToolTipText(null);
                     } else {

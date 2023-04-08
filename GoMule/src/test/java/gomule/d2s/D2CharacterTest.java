@@ -20,6 +20,533 @@ public class D2CharacterTest {
         assertEquals(expectedComplexChar, d2Character.fullDumpStr().replaceAll("\r", ""));
     }
 
+    private String expectedComplexChar = "" +
+            "Name:       Andy\n" +
+            "Class:      Barbarian\n" +
+            "Experience: 147832880\n" +
+            "Level:      62\n" +
+            "\n" +
+            "            Naked/Gear\n" +
+            "Strength:   70/70\n" +
+            "Dexterity:  20/20\n" +
+            "Vitality:   295/295\n" +
+            "Energy:     15/15\n" +
+            "HP:         1297/1392\n" +
+            "Mana:       76/96\n" +
+            "Stamina:    423/423\n" +
+            "Defense:    5/303\n" +
+            "AR:         85/929\n" +
+            "\n" +
+            "Fire:       55/15/-45\n" +
+            "Cold:       46/6/-54\n" +
+            "Lightning:  22/-18/-78\n" +
+            "Poison:     10/-30/-90\n" +
+            "\n" +
+            "MF:         115       Block:      1\n" +
+            "GF:         75       FR/W:       0\n" +
+            "FHR:        0       IAS:        10\n" +
+            "FCR:        0\n" +
+            "\n" +
+            "Bash: 1/2\n" +
+            "Leap: 1/2\n" +
+            "Double Swing: 0/0\n" +
+            "Stun: 1/2\n" +
+            "Double Throw: 0/0\n" +
+            "Leap Attack: 1/2\n" +
+            "Concentrate: 1/2\n" +
+            "Frenzy: 0/0\n" +
+            "Whirlwind: 13/14\n" +
+            "Berserk: 1/2\n" +
+            "\n" +
+            "Sword Mastery: 0/0\n" +
+            "Axe Mastery: 0/0\n" +
+            "Mace Mastery: 20/21\n" +
+            "Pole Arm Mastery: 0/0\n" +
+            "Throwing Mastery: 0/0\n" +
+            "Spear Mastery: 0/0\n" +
+            "Increased Stamina: 1/2\n" +
+            "Iron Skin: 1/2\n" +
+            "Increased Speed: 1/2\n" +
+            "Natural Resistance: 3/4\n" +
+            "\n" +
+            "Howl: 1/2\n" +
+            "Find Potion: 1/2\n" +
+            "Taunt: 0/0\n" +
+            "Shout: 1/2\n" +
+            "Find Item: 1/2\n" +
+            "Battle Cry: 0/0\n" +
+            "Battle Orders: 20/21\n" +
+            "Grim Ward: 0/0\n" +
+            "War Cry: 0/0\n" +
+            "Battle Command: 1/2\n" +
+            "\n" +
+            "Viper Touch\n" +
+            "Ring\n" +
+            "Required Level: 13\n" +
+            "Fingerprint: 0xf9186971\n" +
+            "Item Level: 21\n" +
+            "Version: Resurrected\n" +
+            "+2 to Minimum Damage\n" +
+            "+53 to Attack Rating\n" +
+            "+10 to Mana\n" +
+            "Lightning Resist +21%\n" +
+            "\n" +
+            "Key\n" +
+            "Fingerprint: 0x6fc37ff9\n" +
+            "Item Level: 28\n" +
+            "Version: Resurrected\n" +
+            "\n" +
+            "Venom Ward\n" +
+            "Breast Plate\n" +
+            "Defense: 137\n" +
+            "Durability: 50 of 50\n" +
+            "Required Level: 20\n" +
+            "Required Strength: 30\n" +
+            "Fingerprint: 0x239bb50a\n" +
+            "Item Level: 37\n" +
+            "Version: Resurrected\n" +
+            "+99% Enhanced Defense\n" +
+            "+15% to Maximum Poison Resist\n" +
+            "Poison Resist +90%\n" +
+            "Poison Length Reduced by 50%\n" +
+            "+2 to Light Radius\n" +
+            "\n" +
+            "Snake's Amulet of the Bat\n" +
+            "Amulet\n" +
+            "Required Level: 11\n" +
+            "Fingerprint: 0xe760219c\n" +
+            "Item Level: 38\n" +
+            "Version: Resurrected\n" +
+            "4% Mana stolen per hit\n" +
+            "+10 to Mana\n" +
+            "\n" +
+            "Perfect Topaz\n" +
+            "Required Level: 18\n" +
+            "Version: Resurrected\n" +
+            "Weapons: Adds 1 - 40 Lightning Damage\n" +
+            "Armor: 24% Better Chance of Getting Magic Items\n" +
+            "Shields: Lightning Resist +40%\n" +
+            "\n" +
+            "Perfect Skull\n" +
+            "Required Level: 18\n" +
+            "Version: Resurrected\n" +
+            "Weapons: 3% Mana stolen per hit\n" +
+            "4% Life stolen per hit\n" +
+            "Armor: Replenish Life +5\n" +
+            "Regenerate Mana 19%\n" +
+            "Shields: Attacker Takes Damage of 20\n" +
+            "\n" +
+            "Perfect Topaz\n" +
+            "Required Level: 18\n" +
+            "Version: Resurrected\n" +
+            "Weapons: Adds 1 - 40 Lightning Damage\n" +
+            "Armor: 24% Better Chance of Getting Magic Items\n" +
+            "Shields: Lightning Resist +40%\n" +
+            "\n" +
+            "Order Gyre\n" +
+            "Ring\n" +
+            "Required Level: 30\n" +
+            "Fingerprint: 0xcb4bbc02\n" +
+            "Item Level: 43\n" +
+            "Version: Resurrected\n" +
+            "+10% Faster Cast Rate\n" +
+            "+15 to Attack Rating\n" +
+            "+7 to Strength\n" +
+            "+54 to Mana\n" +
+            "Cold Resist +14%\n" +
+            "Lightning Resist +6%\n" +
+            "+1 to Light Radius\n" +
+            "\n" +
+            "The Stone of Jordan\n" +
+            "Ring\n" +
+            "Required Level: 29\n" +
+            "Fingerprint: 0x4601f2fb\n" +
+            "Item Level: 41\n" +
+            "Version: Resurrected\n" +
+            "+1 to All Skills\n" +
+            "Adds 1 - 12 Lightning Damage\n" +
+            "+20 to Mana\n" +
+            "Increase Maximum Mana 25%\n" +
+            "\n" +
+            "Prismatic Amulet of Measure\n" +
+            "Amulet\n" +
+            "Required Level: 31\n" +
+            "Fingerprint: 0xbf0ce08d\n" +
+            "Item Level: 46\n" +
+            "Version: Resurrected\n" +
+            "+5 to Minimum Damage\n" +
+            "All Resistances +18\n" +
+            "\n" +
+            "Ring of Fortune\n" +
+            "Ring\n" +
+            "Required Level: 31\n" +
+            "Fingerprint: 0x88c21560\n" +
+            "Item Level: 52\n" +
+            "Version: Resurrected\n" +
+            "24% Better Chance of Getting Magic Items\n" +
+            "\n" +
+            "Perfect Skull\n" +
+            "Required Level: 18\n" +
+            "Version: Resurrected\n" +
+            "Weapons: 3% Mana stolen per hit\n" +
+            "4% Life stolen per hit\n" +
+            "Armor: Replenish Life +5\n" +
+            "Regenerate Mana 19%\n" +
+            "Shields: Attacker Takes Damage of 20\n" +
+            "\n" +
+            "Perfect Topaz\n" +
+            "Required Level: 18\n" +
+            "Version: Resurrected\n" +
+            "Weapons: Adds 1 - 40 Lightning Damage\n" +
+            "Armor: 24% Better Chance of Getting Magic Items\n" +
+            "Shields: Lightning Resist +40%\n" +
+            "\n" +
+            "Death Emblem\n" +
+            "Amulet\n" +
+            "Required Level: 27\n" +
+            "Fingerprint: 0x2bb3f14b\n" +
+            "Item Level: 37\n" +
+            "Version: Resurrected\n" +
+            "+1 to Barbarian Skill Levels\n" +
+            "3% Mana stolen per hit\n" +
+            "+45 to Life\n" +
+            "+8 Maximum Stamina\n" +
+            "Lightning Resist +9%\n" +
+            "Damage Reduced by 4\n" +
+            "\n" +
+            "Perfect Topaz\n" +
+            "Required Level: 18\n" +
+            "Version: Resurrected\n" +
+            "Weapons: Adds 1 - 40 Lightning Damage\n" +
+            "Armor: 24% Better Chance of Getting Magic Items\n" +
+            "Shields: Lightning Resist +40%\n" +
+            "\n" +
+            "Cathan's Seal\n" +
+            "Ring\n" +
+            "Required Level: 11\n" +
+            "Fingerprint: 0x26839859\n" +
+            "Item Level: 40\n" +
+            "Version: Resurrected\n" +
+            "6% Life stolen per hit\n" +
+            "Damage Reduced by 2\n" +
+            "Set (2 items): +10 to Strength\n" +
+            "\n" +
+            "\n" +
+            "Full Rejuvenation Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenishes Mana 100%\n" +
+            "Replenishes Health 100%\n" +
+            "\n" +
+            "Prismatic Amulet of the Apprentice\n" +
+            "Amulet\n" +
+            "Required Level: 31\n" +
+            "Fingerprint: 0xa5a03ceb\n" +
+            "Item Level: 55\n" +
+            "Version: Resurrected\n" +
+            "+10% Faster Cast Rate\n" +
+            "All Resistances +19\n" +
+            "\n" +
+            "Goblin Toe\n" +
+            "Light Plated Boots\n" +
+            "Defense: 33\n" +
+            "Durability: 17 of 18\n" +
+            "Required Level: 22\n" +
+            "Required Strength: 50\n" +
+            "Fingerprint: 0xe3bcd9da\n" +
+            "Item Level: 37\n" +
+            "Version: Resurrected\n" +
+            "25% Chance of Crushing Blow\n" +
+            "+54% Enhanced Defense\n" +
+            "+15 Defense\n" +
+            "Damage Reduced by 1\n" +
+            "Magic Damage Reduced by 1\n" +
+            "+-1 to Light Radius\n" +
+            "\n" +
+            "Plague Touch\n" +
+            "Ring\n" +
+            "Required Level: 48\n" +
+            "Fingerprint: 0x2ec5a898\n" +
+            "Item Level: 60\n" +
+            "Version: Resurrected\n" +
+            "+70 to Attack Rating\n" +
+            "+11 to Dexterity\n" +
+            "+15 to Mana\n" +
+            "Cold Resist +13%\n" +
+            "40% Extra Gold from Monsters\n" +
+            "\n" +
+            "Tarnhelm\n" +
+            "Skull Cap\n" +
+            "Defense: 8\n" +
+            "Durability: 18 of 18\n" +
+            "Required Level: 15\n" +
+            "Required Strength: 15\n" +
+            "Fingerprint: 0x1d5f7f41\n" +
+            "Item Level: 37\n" +
+            "Version: Resurrected\n" +
+            "+1 to All Skills\n" +
+            "75% Extra Gold from Monsters\n" +
+            "48% Better Chance of Getting Magic Items\n" +
+            "\n" +
+            "Angelic Wings\n" +
+            "Amulet\n" +
+            "Required Level: 12\n" +
+            "Fingerprint: 0x8a7f0099\n" +
+            "Item Level: 17\n" +
+            "Version: Resurrected\n" +
+            "20% Damage Taken Goes To Mana\n" +
+            "+3 to Light Radius\n" +
+            "Set (2 items): +75 to Life\n" +
+            "Set (3 items): +1 to All Skills\n" +
+            "\n" +
+            "(2 items): +10 to Dexterity\n" +
+            "\n" +
+            "Boneflesh\n" +
+            "Plate Mail\n" +
+            "Defense: 243\n" +
+            "Durability: 60 of 60\n" +
+            "Required Level: 26\n" +
+            "Required Strength: 65\n" +
+            "Fingerprint: 0x5ab1f18a\n" +
+            "Item Level: 37\n" +
+            "Version: Resurrected\n" +
+            "+35 to Attack Rating\n" +
+            "5% Life stolen per hit\n" +
+            "25% Chance of Open Wounds\n" +
+            "+108% Enhanced Defense\n" +
+            "\n" +
+            "Nagelring\n" +
+            "Ring\n" +
+            "Required Level: 7\n" +
+            "Fingerprint: 0xaa69ec46\n" +
+            "Item Level: 37\n" +
+            "Version: Resurrected\n" +
+            "+50 to Attack Rating\n" +
+            "Magic Damage Reduced by 3\n" +
+            "Attacker Takes Damage of 3\n" +
+            "22% Better Chance of Getting Magic Items\n" +
+            "\n" +
+            "Angelic Halo\n" +
+            "Ring\n" +
+            "Required Level: 12\n" +
+            "Fingerprint: 0x706e69f9\n" +
+            "Item Level: 25\n" +
+            "Version: Resurrected\n" +
+            "+20 to Life\n" +
+            "Replenish Life +6\n" +
+            "Set (2 items): +744 to Attack Rating (Based on Character Level)\n" +
+            "Set (3 items): 50% Better Chance of Getting Magic Items\n" +
+            "\n" +
+            "(2 items): +10 to Dexterity\n" +
+            "\n" +
+            "Nightsmoke\n" +
+            "Belt\n" +
+            "Defense: 23\n" +
+            "Durability: 16 of 16\n" +
+            "Required Level: 20\n" +
+            "Required Strength: 25\n" +
+            "Fingerprint: 0x10b7ce21\n" +
+            "Item Level: 65\n" +
+            "Version: Resurrected\n" +
+            "+46% Enhanced Defense\n" +
+            "+15 Defense\n" +
+            "+20 to Mana\n" +
+            "All Resistances +10\n" +
+            "Damage Reduced by 2\n" +
+            "50% Damage Taken Goes To Mana\n" +
+            "\n" +
+            "Brimstone Tread\n" +
+            "Light Plated Boots\n" +
+            "Defense: 16\n" +
+            "Durability: 18 of 18\n" +
+            "Required Level: 12\n" +
+            "Required Strength: 50\n" +
+            "Fingerprint: 0xcb3af328\n" +
+            "Item Level: 26\n" +
+            "Version: Resurrected\n" +
+            "+15 to Attack Rating\n" +
+            "+34% Enhanced Defense\n" +
+            "Cold Resist +6%\n" +
+            "Fire Resist +7%\n" +
+            "Half Freeze Duration\n" +
+            "21% Better Chance of Getting Magic Items\n" +
+            "+1 to Light Radius\n" +
+            "\n" +
+            "Spirit Clutches\n" +
+            "Chain Gloves\n" +
+            "Defense: 8\n" +
+            "Durability: 16 of 16\n" +
+            "Required Level: 27\n" +
+            "Required Strength: 25\n" +
+            "Fingerprint: 0xb925cec\n" +
+            "Item Level: 43\n" +
+            "Version: Resurrected\n" +
+            "+10% Increased Attack Speed\n" +
+            "3% Mana stolen per hit\n" +
+            "Lightning Resist +12%\n" +
+            "Fire Resist +8%\n" +
+            "24% Better Chance of Getting Magic Items\n" +
+            "\n" +
+            "Full Rejuvenation Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenishes Mana 100%\n" +
+            "Replenishes Health 100%\n" +
+            "\n" +
+            "Super Healing Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenish Life +320\n" +
+            "\n" +
+            "Super Healing Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenish Life +320\n" +
+            "\n" +
+            "Super Healing Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenish Life +320\n" +
+            "\n" +
+            "Full Rejuvenation Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenishes Mana 100%\n" +
+            "Replenishes Health 100%\n" +
+            "\n" +
+            "Super Mana Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenishes Mana 250%\n" +
+            "\n" +
+            "Super Mana Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenishes Mana 250%\n" +
+            "\n" +
+            "Super Mana Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenishes Mana 250%\n" +
+            "\n" +
+            "Tome of Town Portal\n" +
+            "Fingerprint: 0x4e0b77a1\n" +
+            "Item Level: 10\n" +
+            "Version: Resurrected\n" +
+            "\n" +
+            "Full Rejuvenation Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenishes Mana 100%\n" +
+            "Replenishes Health 100%\n" +
+            "\n" +
+            "Full Rejuvenation Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenishes Mana 100%\n" +
+            "Replenishes Health 100%\n" +
+            "\n" +
+            "Full Rejuvenation Potion\n" +
+            "Version: Resurrected\n" +
+            "Replenishes Mana 100%\n" +
+            "Replenishes Health 100%\n" +
+            "\n" +
+            "Tome of Identify\n" +
+            "Fingerprint: 0x9c2b0af2\n" +
+            "Item Level: 10\n" +
+            "Version: Resurrected\n" +
+            "\n" +
+            "Fortuitous Ring of the Apprentice\n" +
+            "Ring\n" +
+            "Required Level: 8\n" +
+            "Fingerprint: 0x2a9bf563\n" +
+            "Item Level: 46\n" +
+            "Version: Resurrected\n" +
+            "+10% Faster Cast Rate\n" +
+            "15% Better Chance of Getting Magic Items\n" +
+            "\n" +
+            "Skull Track\n" +
+            "Greaves\n" +
+            "Defense: 21\n" +
+            "Durability: 23 of 24\n" +
+            "Required Level: 12\n" +
+            "Required Strength: 70\n" +
+            "Fingerprint: 0x8f6daded\n" +
+            "Item Level: 60\n" +
+            "Version: Resurrected\n" +
+            "+10% Faster Run/Walk\n" +
+            "+10% Faster Hit Recovery\n" +
+            "+37% Enhanced Defense\n" +
+            "60% Extra Gold from Monsters\n" +
+            "\n" +
+            "Duskdeep\n" +
+            "Full Helm\n" +
+            "Defense: 46\n" +
+            "Durability: 22 of 30\n" +
+            "Required Level: 17\n" +
+            "Required Strength: 41\n" +
+            "Fingerprint: 0xe476c1b0\n" +
+            "Item Level: 47\n" +
+            "Version: Resurrected\n" +
+            "+8 to Maximum Damage\n" +
+            "+37% Enhanced Defense\n" +
+            "+10 Defense\n" +
+            "All Resistances +15\n" +
+            "Damage Reduced by 7\n" +
+            "+-2 to Light Radius\n" +
+            "\n" +
+            "Perfect Topaz\n" +
+            "Required Level: 18\n" +
+            "Version: Resurrected\n" +
+            "Weapons: Adds 1 - 40 Lightning Damage\n" +
+            "Armor: 24% Better Chance of Getting Magic Items\n" +
+            "Shields: Lightning Resist +40%\n" +
+            "\n" +
+            "Viper Eye\n" +
+            "Ring\n" +
+            "Required Level: 16\n" +
+            "Fingerprint: 0xd617044b\n" +
+            "Item Level: 36\n" +
+            "Version: Resurrected\n" +
+            "+83 to Attack Rating\n" +
+            "3% Life stolen per hit\n" +
+            "+3 to Dexterity\n" +
+            "Poison Resist +24%\n" +
+            "Magic Damage Reduced by 2\n" +
+            "\n" +
+            "Horadric Cube\n" +
+            "Fingerprint: 0xc68c3837\n" +
+            "Item Level: 38\n" +
+            "Version: Resurrected\n" +
+            "\n" +
+            "Bonesnap\n" +
+            "Maul\n" +
+            "Two Hand Damage: 99 - 141\n" +
+            "Durability: 60 of 60\n" +
+            "Required Level: 24\n" +
+            "Required Strength: 69\n" +
+            "Fingerprint: 0xeee5a59e\n" +
+            "Item Level: 37\n" +
+            "Version: Resurrected\n" +
+            "230% Enhanced Damage\n" +
+            "+200% Damage to Undead\n" +
+            "40% Chance of Crushing Blow\n" +
+            "Cold Resist +30%\n" +
+            "Fire Resist +30%\n" +
+            "\n" +
+            "Mercenary:\n" +
+            "\n" +
+            "Name:       Elexa\n" +
+            "Race:       Rogue Scout\n" +
+            "Type:       Ice - Hell\n" +
+            "Experience: 28312440\n" +
+            "Level:      60\n" +
+            "Dead?:      unknown\n" +
+            "\n" +
+            "            Naked/Gear\n" +
+            "Strength:   107/107\n" +
+            "Dexterity:  159/159\n" +
+            "HP:         690/690\n" +
+            "Defense:    622/622\n" +
+            "AR:         1878/1878\n" +
+            "\n" +
+            "Fire:       112/72/12\n" +
+            "Cold:       112/72/12\n" +
+            "Lightning:  112/72/12\n" +
+            "Poison:     112/72/12\n" +
+            "" +
+            "\n";
+
+    /*
     private String expectedComplexChar = "Name:       ThePerfectJava\n" +
             "Class:      Amazon\n" +
             "Experience: 3232620645\n" +
@@ -928,5 +1455,6 @@ public class D2CharacterTest {
             "Shields: 25% Better Chance of Getting Magic Items\n" +
             "\n" +
             "\n";
+            */
 
 }

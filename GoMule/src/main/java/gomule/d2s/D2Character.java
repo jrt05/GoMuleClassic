@@ -87,6 +87,7 @@ public class D2Character extends D2ItemListAdapter {
     private long lCharCode;
     private String iCharClass;
     private boolean iHC;
+    private boolean expansion;          // ClassicD2R
     private boolean[][] iStashGrid;
     private boolean[][] iInventoryGrid;
     private boolean[][] iCubeGrid;
@@ -160,6 +161,9 @@ public class D2Character extends D2ItemListAdapter {
         iReader.set_byte_pos(36);
         iReader.skipBits(2);
         iHC = iReader.read(1) == 1;
+        iReader.skipBits(2);                    // ClassicD2R
+        expansion = iReader.read(1) == 1;       // Get expansion flag    // ClassicD2R
+        if(expansion) throw new Exception("Error: Expansion character not supported with GoMuleClassic. Use GoMule instead");   // ClassicD2R
         iReader.set_byte_pos(37);
 //		long lCharTitle = iReader.read(8);
         iReader.read(8);

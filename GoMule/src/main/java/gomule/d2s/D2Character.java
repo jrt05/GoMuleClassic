@@ -64,8 +64,10 @@ public class D2Character extends D2ItemListAdapter {
 
     public static final int INVSIZEX = 10;
     public static final int INVSIZEY = 4;
-    public static final int STASHSIZEX = 10;
-    public static final int STASHSIZEY = 10;
+    //public static final int STASHSIZEX = 10;  ClassicD2R
+    public static final int STASHSIZEX = 6;
+    //public static final int STASHSIZEY = 10;  ClassicD2R
+    public static final int STASHSIZEY = 4;
     public static final int BELTSIZEX = 4;
     public static final int BELTSIZEY = 4;
     public static final int CUBESIZEX = 3;
@@ -858,8 +860,10 @@ public class D2Character extends D2ItemListAdapter {
                 col = (int) i.get_col();
                 width = (int) i.get_width();
                 height = (int) i.get_height();
-                if ((row + height) > 10) return false;
-                if ((col + width) > 10) return false;
+                //if ((row + height) > 10) return false;   ClassicD2R
+                if ((row + height) > 4) return false;
+                //if ((col + width) > 10) return false;     ClassicD2R
+                if ((col + width) > 6) return false;
                 for (j = row; j < row + height; j++) {
                     for (k = col; k < col + width; k++) iStashGrid[j][k] = true;
                 }
@@ -875,10 +879,11 @@ public class D2Character extends D2ItemListAdapter {
             if (iMerc[body_position - 1] == true) {
                 return false;
             } else {
-                iMerc[body_position - 1] = true;
+                //iMerc[body_position - 1] = true;  ClassicD2R
             }
         }
-        return true;
+        //return true;      ClassicD2R
+        return false;       // No merc items
     }
 
     public boolean markCorpseGrid(D2Item i) {
@@ -965,8 +970,10 @@ public class D2Character extends D2ItemListAdapter {
                 col = (int) i.get_col();
                 width = (int) i.get_width();
                 height = (int) i.get_height();
-                if ((row + height) > 10) return false;
-                if ((col + width) > 10) return false;
+                //if ((row + height) > 10) return false;        ClassicD2R
+                if ((row + height) > 4) return false;
+                //if ((col + width) > 10) return false;         ClassicD2R
+                if ((col + width) > 6) return false;
                 for (j = row; j < row + height; j++) {
                     for (k = col; k < col + width; k++)
                         iStashGrid[j][k] = false;
@@ -1327,16 +1334,16 @@ public class D2Character extends D2ItemListAdapter {
             System.arraycopy(item_bytes, 0, lNewbytes, lPos, item_bytes.length);
             lPos += item_bytes.length;
         }
-        if (hasMerc()) {
-            System.arraycopy(iBetweenItems, 0, lNewbytes, lPos, iBetweenItems.length);
-            lPos += iBetweenItems.length;
-            lMercItemCountPos = lPos - 2;
-            for (int i = 0; i < iMercItems.size(); i++) {
-                byte[] item_bytes = ((D2Item) iMercItems.get(i)).get_bytes();
-                System.arraycopy(item_bytes, 0, lNewbytes, lPos, item_bytes.length);
-                lPos += item_bytes.length;
-            }
-        }
+        //if (hasMerc()) {          // ClassicD2R
+        //    System.arraycopy(iBetweenItems, 0, lNewbytes, lPos, iBetweenItems.length);            // ClassicD2R
+        //    lPos += iBetweenItems.length;             // ClassicD2R
+        //    lMercItemCountPos = lPos - 2;             // ClassicD2R
+        //    for (int i = 0; i < iMercItems.size(); i++) {             // ClassicD2R
+        //        byte[] item_bytes = ((D2Item) iMercItems.get(i)).get_bytes();             // ClassicD2R
+        //        System.arraycopy(item_bytes, 0, lNewbytes, lPos, item_bytes.length);          // ClassicD2R
+        //        lPos += item_bytes.length;            // ClassicD2R
+        //    }             // ClassicD2R
+        //}             // ClassicD2R
         if (iAfterItems.length > 0) {
             System.arraycopy(iAfterItems, 0, lNewbytes, lPos, iAfterItems.length);
         }
@@ -1347,10 +1354,10 @@ public class D2Character extends D2ItemListAdapter {
             lCharItemsCount++;
         }
         iReader.write(lCharItemsCount, 16);
-        if (hasMerc()) {
-            iReader.set_byte_pos(lMercItemCountPos);
-            iReader.write(iMercItems.size(), 16);
-        }
+        //if (hasMerc()) {          // ClassicD2R
+        //    iReader.set_byte_pos(lMercItemCountPos);          // ClassicD2R
+        //    iReader.write(iMercItems.size(), 16);             // ClassicD2R
+        //}             // ClassicD2R
         // get all the bytes
         iReader.set_byte_pos(0);
         byte[] data = iReader.get_bytes(iReader.get_length());

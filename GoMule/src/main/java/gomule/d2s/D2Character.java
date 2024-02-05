@@ -877,17 +877,19 @@ public class D2Character extends D2ItemListAdapter {
     }
 
     public boolean markMercGrid(D2Item i) {
+        if(expansion) {             // ClassicD2R
+            return false;           // ClassicD2R
+        }                           // ClassicD2R
         short panel = i.get_panel();
         if (panel == 0) {
             int body_position = (int) i.get_body_position();
             if (iMerc[body_position - 1] == true) {
                 return false;
             } else {
-                //iMerc[body_position - 1] = true;  ClassicD2R
+                iMerc[body_position - 1] = true;
             }
         }
-        //return true;      ClassicD2R
-        return false;       // No merc items
+        return true;
     }
 
     public boolean markCorpseGrid(D2Item i) {
@@ -1338,16 +1340,16 @@ public class D2Character extends D2ItemListAdapter {
             System.arraycopy(item_bytes, 0, lNewbytes, lPos, item_bytes.length);
             lPos += item_bytes.length;
         }
-        //if (hasMerc()) {          // ClassicD2R
-        //    System.arraycopy(iBetweenItems, 0, lNewbytes, lPos, iBetweenItems.length);            // ClassicD2R
-        //    lPos += iBetweenItems.length;             // ClassicD2R
-        //    lMercItemCountPos = lPos - 2;             // ClassicD2R
-        //    for (int i = 0; i < iMercItems.size(); i++) {             // ClassicD2R
-        //        byte[] item_bytes = ((D2Item) iMercItems.get(i)).get_bytes();             // ClassicD2R
-        //        System.arraycopy(item_bytes, 0, lNewbytes, lPos, item_bytes.length);          // ClassicD2R
-        //        lPos += item_bytes.length;            // ClassicD2R
-        //    }             // ClassicD2R
-        //}             // ClassicD2R
+        if (expansion && hasMerc()) {          // ClassicD2R    // Only expansion characters can have merc items
+            System.arraycopy(iBetweenItems, 0, lNewbytes, lPos, iBetweenItems.length);
+            lPos += iBetweenItems.length;
+            lMercItemCountPos = lPos - 2;
+            for (int i = 0; i < iMercItems.size(); i++) {
+                byte[] item_bytes = ((D2Item) iMercItems.get(i)).get_bytes();
+                System.arraycopy(item_bytes, 0, lNewbytes, lPos, item_bytes.length);
+                lPos += item_bytes.length;
+            }
+        }
         if (iAfterItems.length > 0) {
             System.arraycopy(iAfterItems, 0, lNewbytes, lPos, iAfterItems.length);
         }
@@ -1358,10 +1360,10 @@ public class D2Character extends D2ItemListAdapter {
             lCharItemsCount++;
         }
         iReader.write(lCharItemsCount, 16);
-        //if (hasMerc()) {          // ClassicD2R
-        //    iReader.set_byte_pos(lMercItemCountPos);          // ClassicD2R
-        //    iReader.write(iMercItems.size(), 16);             // ClassicD2R
-        //}             // ClassicD2R
+        if (expansion && hasMerc()) {          // ClassicD2R    // Only expansion characters can have merc items
+            iReader.set_byte_pos(lMercItemCountPos);
+            iReader.write(iMercItems.size(), 16);
+        }
         // get all the bytes
         iReader.set_byte_pos(0);
         byte[] data = iReader.get_bytes(iReader.get_length());

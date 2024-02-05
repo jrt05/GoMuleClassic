@@ -136,6 +136,7 @@ public class D2FileManager extends JFrame {
 
         setContentPane(iContentPane);
         setSize(1024, 768);
+        setExtendedState(getExtendedState() | this.MAXIMIZED_BOTH);
         setTitle(true);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.getGlassPane().setVisible(false);
